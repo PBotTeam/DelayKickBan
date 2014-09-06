@@ -106,10 +106,70 @@ public f3KickBanFix(playerid)
 
 		    return BanEx(playerid, f3_KBRBanExRes[playerid]);
 		}
-		default : return 0;
+		default :
+		{
+			f3_KBRProcessed[playerid] = 0;
+			f3_KBRTimer[playerid] = -1;
+		}
 	}
 	return 1;
 }
+
+public OnPlayerConnect(playerid)
+{
+	f3_KBRProcessed[playerid] = 0;
+	f3_KBRTimer[playerid] = -1;
+
+	#if defined f3_KBROnPlayerConnect
+	return f3_KBROnPlayerConnect(playerid);
+	
+	#else
+	
+	return 1;
+	
+	#endif
+	
+}
+
+#if defined _ALS_OnPlayerConnect
+	#undef OnPlayerConnect
+#else
+	#define _ALS_OnPlayerConnect
+#endif
+
+#define OnPlayerConnect f3_KBROnPlayerConnect
+
+#if defined f3_KBROnPlayerConnect
+forward f3_KBROnPlayerConnect(playerid);
+#endif
+
+public OnPlayerDisconnect(playerid, reason)
+{
+	if(f3_KBRTimer[playerid] != -1)
+	{
+		f3KickBanFix(playerid);
+	}
+	#if defined f3_KBROnPlayerDisconnect
+	return f3_KBROnPlayerDisconnect(playerid, reason);
+	
+	#else
+	
+	return 1;
+	
+	#endif
+}
+
+#if defined _ALS_OnPlayerDisconnect
+	#undef OnPlayerDisconnect
+#else
+	#define _ALS_OnPlayerDisconnect
+#endif
+
+#define OnPlayerDisconnect f3_KBROnPlayerDisconnect
+
+#if defined f3_KBROnPlayerDisconnect
+forward f3_KBROnPlayerDisconnect(playerid, reason);
+#endif
 
 public OnPlayerUpdate(playerid)
 {
