@@ -14,6 +14,15 @@ This include ensures that most of the player's update won't be synced to the ser
 dialog responses, vehicle updates and death information. This include is compatible with both 0.3x version and
 0.3z version.
 
+Also, this include provides an OPTIONAL parameter called "delay_ms" which is actually the time(in milli-seconds) to be delayed over Kick, Ban or BanEx functions. 
+
+native Kick(playerid, delay_ms=150); //If used as Kick(playerid); delay_ms will be set as 150 (default value)
+native Ban(playerid, delay_ms=150);
+native BanEx(playerid, const reason[], delay_ms=150);
+native IsKickBanProcessed(playerid); //Returns : 1 if kick/ban is being processed, 0 if not.
+
+
+
 INSTALLATION
 
 Place "KickBanFix.inc" on /pawno/include/ directory.
