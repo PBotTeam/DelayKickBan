@@ -5,10 +5,10 @@
 							  By fall3n
 
 
-native Kick(playerid, delay_ms=150);
+native Kick(playerid, delay_ms=150); //If used as Kick(playerid); delay_ms will be set as 150 (default value)
 native Ban(playerid, delay_ms=150);
 native BanEx(playerid, const reason[], delay_ms=150);
-native IsKickBanProcessed(playerid);
+native IsKickBanProcessed(playerid); //Returns : 1 if kick/ban is being processed, 0 if not.
 
 "delay_ms" is an optional parameter. It stands for the time(in milli-seconds) to
 be delayed for processing kick/ban/banex functions. By default it's 150 ms.
