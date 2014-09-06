@@ -17,8 +17,11 @@ dialog responses, vehicle updates and death information. This include is compati
 Also, this include provides an OPTIONAL parameter called "delay_ms" which is actually the time(in milli-seconds) to be delayed over Kick, Ban or BanEx functions. 
 
 native Kick(playerid, delay_ms=150); //If used as Kick(playerid); delay_ms will be set as 150 (default value)
+
 native Ban(playerid, delay_ms=150);
+
 native BanEx(playerid, const reason[], delay_ms=150);
+
 native IsKickBanProcessed(playerid); //Returns : 1 if kick/ban is being processed, 0 if not.
 
 
