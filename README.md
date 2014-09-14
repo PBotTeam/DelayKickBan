@@ -1,4 +1,4 @@
-KickBanFix - By fall3n
+DelayKickBan (Previously known as : KickBanFix) - By fall3n
 
 
 DESCRIPTION
@@ -14,13 +14,15 @@ This include ensures that most of the player's update won't be synced to the ser
 dialog responses, vehicle updates and death information. This include is compatible with both 0.3x version and
 0.3z version.
 
-Also, this include provides an OPTIONAL parameter called "delay_ms" which is actually the time(in milli-seconds) to be delayed over Kick, Ban or BanEx functions. 
+Also, this include allows you to replace the default Kick, Ban and BanEx functions to be working as delayed functions. So that you don't have to use "DelayKick" to delay, "Kick" would automatically delay. The same goes for "Ban", and "BanEx". To use this, define HOOK_DEFAULT_KICKBAN before including this script.
 
-native Kick(playerid, delay_ms=150); //If used as Kick(playerid); delay_ms will be set as 150 (default value)
 
-native Ban(playerid, delay_ms=150);
 
-native BanEx(playerid, const reason[], delay_ms=150);
+native DelayKick(playerid, delay_ms=150);
+
+native DelayBan(playerid, delay_ms=150);
+
+native DelayBanEx(playerid, const reason[], delay_ms=150);
 
 native IsKickBanProcessed(playerid); //Returns : 1 if kick/ban is being processed, 0 if not.
 
@@ -28,7 +30,7 @@ native IsKickBanProcessed(playerid); //Returns : 1 if kick/ban is being processe
 
 INSTALLATION
 
-Place "KickBanFix.inc" on /pawno/include/ directory.
+Place "DelayKickBan.inc" on /pawno/include/ directory.
 
 
 CREDITS
@@ -51,5 +53,5 @@ CONTACT
 	Github : https://github.com/falle3n/
 	
 	
-Thank you for using KickBanFix.inc
+Thank you for using DelayKickBan.inc
 
