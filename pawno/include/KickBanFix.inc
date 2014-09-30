@@ -52,7 +52,7 @@ stock f3_Kick(playerid, delay_ms = 150)
 	if(!IsPlayerConnected(playerid) || f3_KBRProcessed[playerid]) return 0;
 
 	f3_KBRProcessed[playerid] = 1;
-	f3_KBRTimer[playerid] = SetTimerEx("f3KickBanFix", delay_ms, false, "dd", playerid);
+	f3_KBRTimer[playerid] = SetTimerEx("f3KickBanFix", delay_ms, false, "d", playerid);
 
 	return 1;
 }
@@ -533,5 +533,4 @@ forward f3_KBROnVehicleRespray(playerid, vehicleid, color1, color2);
 #define Kick 	f3_Kick
 #define Ban     f3_Ban
 #define BanEx   f3_BanEx
-
 
