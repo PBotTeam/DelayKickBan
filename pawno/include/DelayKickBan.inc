@@ -222,7 +222,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 
 	#else
 
-	return 1;
+	return 0;
 
 	#endif
 }
